@@ -81,9 +81,11 @@ RUN mkdir /logs && chown qgis /logs/
 # work tools
 RUN apt-get update -y && apt-get install -y vim mlocate
 
+# copy demo project world for testing
+COPY qgs /qgs
 
 # clean
-# RUN /build/scripts/clean.sh
+RUN /build/scripts/clean.sh
 
 # start von Nginx/QGIS Server
 EXPOSE 9991
